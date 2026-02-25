@@ -21,7 +21,7 @@ def to_binary_label(series):
 def main():
     model = joblib.load("ai_security_engine.joblib")
 
-    test_df = pd.read_csv("data/KDDTest+.txt", names=col_names)
+    test_df = pd.read_csv("Data/KDDTest+.txt", names=col_names)
     test_df["y"] = to_binary_label(test_df["attack_type"])
 
     feature_cols = [c for c in test_df.columns if c not in ["attack_type","difficulty","y"]]
