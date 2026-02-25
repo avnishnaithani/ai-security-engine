@@ -29,8 +29,8 @@ def to_binary_label(series):
     return (series != "normal").astype(int)
 
 def load_data():
-    train_df = pd.read_csv("data/KDDTrain+.txt", names=col_names)
-    test_df  = pd.read_csv("data/KDDTest+.txt", names=col_names)
+    train_df = pd.read_csv("Data/KDDTrain+.txt", names=col_names)
+    test_df  = pd.read_csv("Data/KDDTest+.txt", names=col_names)
 
     train_df["y"] = to_binary_label(train_df["attack_type"])
     test_df["y"]  = to_binary_label(test_df["attack_type"])
